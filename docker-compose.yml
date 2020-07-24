@@ -1,0 +1,34 @@
+version: "3"
+
+# Define services
+services:
+
+  # Spring boot application
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+    - "3001:8080"
+    restart: always
+
+  # Database postgres
+  postgres:
+    image: postgres:10-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pegasus_user
+      POSTGRES_PASSWORD: pegasus_password
+      POSTGRES_DB: pegasus
+
+  # Database pgadmin
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports:
+    - 5555:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin4.org
+      PGADMIN_DEFAULT_PASSWORD: admin
+    restart: unless-stopped
