@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:postresql://postgres:5432/pegasus
+    driver-class-name: org.postgresql.Driver
+    username: pegasus_user
+    password: pegasus_password
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL10Dialect
+
+    hibernate:
+      ddl-auto: update
