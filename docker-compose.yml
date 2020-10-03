@@ -11,6 +11,8 @@ services:
     ports:
     - "3001:8080"
     restart: always
+    depends_on:
+      - postgres
 
   # Database postgres
   postgres:
@@ -29,6 +31,6 @@ services:
     ports:
     - 5555:80
     environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin4@pgadmin4.org
+      PGADMIN_DEFAULT_EMAIL: pgadmin@pgadmin4.org
       PGADMIN_DEFAULT_PASSWORD: admin
     restart: unless-stopped
