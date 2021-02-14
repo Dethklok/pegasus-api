@@ -1,10 +1,10 @@
-package net.pegasus.messenger;
+package net.pegasus.api;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MessengerApplicationTests {
+class PegasusApiApplicationTests {
 
 	@Test
 	void contextLoads() {
