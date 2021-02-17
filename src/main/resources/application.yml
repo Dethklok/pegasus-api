@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:postgresql://postgres:5432/pegasus
+    url: jdbc:postgresql://localhost:5432/pegasus
     driver-class-name: org.postgresql.Driver
-    username: pegasus_user
-    password: pegasus_password
+    username: pegasus
+    password: pegasus
 
   jpa:
     properties:
