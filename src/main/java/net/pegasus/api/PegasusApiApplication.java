@@ -25,6 +25,7 @@ public class PegasusApiApplication {
       public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/api/**")
           .allowedOrigins("http://localhost:4200")
+          .allowedHeaders("Content-Type", "Authorization")
           .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
       }
     };
