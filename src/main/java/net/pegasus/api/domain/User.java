@@ -3,10 +3,7 @@ package net.pegasus.api.domain;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Set;
 
-@Entity
-@Table(name = "app_users")
 @Data
 public class User {
 
@@ -19,8 +16,5 @@ public class User {
   private String email;
 
   private String password;
-
-  @ManyToMany(fetch = FetchType.EAGER)
-  private Set<Role> roles;
 
 }
